@@ -1,11 +1,22 @@
 import React from 'react';
-import Pickup from "./Pickup";
 
 class PickupView extends React.Component {
-    postNewPickup = (pickupNumber, pickupTime)=>{
+    constructor(props) {
+        super(props);
+        this.state={pickupNumber: "", pickupTime:""}
+    }
+    updatePickupNumber = (e)=>{
+        this.setState({pickupNumber: e.target.value});
+    };
+
+    updatePickupTime = (e)=>{
+        this.setState({pickupTime: e.target.value});
+    };
+
+    postNewPickup = ()=>{
         const newPickup = {
-            pickupNumber: pickupNumber,
-            pickupTime: pickupTime
+            pickupNumber: parseInt(this.state.pickupNumber),
+            pickupTime: this.state.pickupTime
         };
 
         fetch("http://localhost:8080/pickups", {
@@ -26,15 +37,15 @@ class PickupView extends React.Component {
                 <div>
                     <div>
                         <span>Package number</span>
-                        <input type="text"/>
+                        <input type="text" value={this.state.pickupNumber} onChange={this.updatePickupNumber}/>
                     </div>
                     <div>
                         <span>Pickup time</span>
-                        <input type="text"/>
+                        <input type="text" value={this.state.pickupTime} onChange={this.updatePickupTime}/>
                     </div>
                 </div>
                 <div>
-                    <button onClick={()=>this.postNewPickup(2, "now2")}>Book</button>
+                    <button onClick={this.postNewPickup}>Book</button>
                     <button>cancel</button>
                 </div>
             </div>
