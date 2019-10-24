@@ -8,6 +8,7 @@ import {createStore} from "redux";
 import Provider from "react-redux/lib/components/Provider";
 import rootReducer from "./components/reducers";
 import PackageView from "./components/pickup/PackageView";
+import DefaultView from "./components/DefaultView";
 
 const store = createStore(
     rootReducer,
@@ -16,7 +17,8 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <PackageView />
+        {/*<PackageView />*/}
+        <DefaultView/>
     </Provider>,
 document.getElementById('root'));
 
