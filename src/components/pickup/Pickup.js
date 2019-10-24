@@ -1,25 +1,27 @@
 import React from 'react';
 
-function Pickup() {
-    return (
-        <div>
-            <h1>Book a pickup</h1>
+class Pickup extends React.Component {
+    render() {
+        return (
             <div>
+                <h1>Book a pickup</h1>
                 <div>
-                    <span>Package number</span>
-                    <input type="text"/>
+                    <div>
+                        <span>Package number</span>
+                        <input type="text"/>
+                    </div>
+                    <div>
+                        <span>Pickup time</span>
+                        <input type="text"/>
+                    </div>
                 </div>
                 <div>
-                    <span>Pickup time</span>
-                    <input type="text"/>
+                    <button>Book</button>
+                    <button>cancel</button>
                 </div>
             </div>
-            <div>
-                <button>Book</button>
-                <button>cancel</button>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Pickup;
