@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Pickup from "./components/pickup/Pickup";
+import PickupView from "./components/pickup/PickupView";
 import {createStore} from "redux";
 import Provider from "react-redux/lib/components/Provider";
 import rootReducer from "./components/reducers";
@@ -15,7 +15,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <Pickup />
+        <PickupView />
     </Provider>,
 document.getElementById('root'));
 
