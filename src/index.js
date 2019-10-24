@@ -7,6 +7,7 @@ import PickupView from "./components/pickup/PickupView";
 import {createStore} from "redux";
 import Provider from "react-redux/lib/components/Provider";
 import rootReducer from "./components/reducers";
+import PackageView from "./components/pickup/PackageView";
 
 const store = createStore(
     rootReducer,
@@ -15,7 +16,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <PickupView />
+        <PackageView />
     </Provider>,
 document.getElementById('root'));
 

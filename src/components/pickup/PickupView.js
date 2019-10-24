@@ -46,7 +46,7 @@ class PickupView extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.postNewPickup}>Book</button>
-                    <button>cancel</button>
+                    <button>Cancel</button>
                 </div>
             </div>
         )
