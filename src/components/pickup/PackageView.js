@@ -4,12 +4,15 @@ class PackageView extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {packageNumber: "", receiver: "", phoneNumber: "", weight: ""}
+        this.state = {
+            receiver: "",
+            phoneNumber: "",
+            weight: ""
+        }
     }
 
     postNewPackage = () => {
         const newPackage = {
-            packageNumber: this.state.packageNumber,
             receiver: this.state.receiver,
             phoneNumber: this.state.phoneNumber,
             weight: this.state.weight
@@ -24,10 +27,6 @@ class PackageView extends React.Component {
             .catch(e => {
                 console.log(e);
             });
-    };
-
-    updatePackageNumber = (e) => {
-        this.setState({packageNumber: e.target.value});
     };
 
     updateReceiver = (e) => {
@@ -47,10 +46,6 @@ class PackageView extends React.Component {
             <div>
                 <h1>New package item</h1>
                 <div>
-                    <div>
-                        <span>PackageNumber</span>
-                        <input type="text" value={this.state.packageNumber} onChange={this.updatePackageNumber}/>
-                    </div>
                     <div>
                         <span>Receiver</span>
                         <input type="text" value={this.state.receiver} onChange={this.updateReceiver}/>
